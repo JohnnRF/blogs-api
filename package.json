@@ -1,0 +1,17 @@
+{
+  "name": "examen-jramirez",
+  "version": "1.0.0",
+  "description": "examen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/index.js"
+  },
+  "author": "Johnn Ramirez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "pg-promise": "^10.11.1"
+  }
+}
