@@ -16,7 +16,7 @@ const updateComent = async (req, res) => {
  }
 
  const insertAutor = async (req, res) =>{
-    const {aut_usuario, aut_nombre} = req.query;
+    const {aut_usuario, aut_nombre} = req.body;
     const response = await db.one(`INSERT INTO public.autor(aut_usuario, aut_nombre) VALUES ($1, $2) returning *;`, [aut_usuario, aut_nombre]);
     
     res.json(response);
