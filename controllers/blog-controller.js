@@ -27,6 +27,14 @@ const updateComent = async (req, res) => {
     res.json(response);
 
 }
+
+const getAutorsById = async (req, res) => {
+    const id=req.params.id;
+    const response = await db.any(`SELECT * FROM autor WHERE aut_id=$1`, [id])
+    res.json(response);
+
+}
+
 const UpdateAutor = async (req, resp) =>{
     const {aut_usuario, aut_nombre, aut_id} = req.query;
     const response = await db.query(`UPDATE public.autor SET aut_usuario=$1, aut_nombre=$2 WHERE aut_id = $3`, [aut_usuario, aut_nombre, aut_id]);
@@ -67,5 +75,6 @@ module.exports = {
     UpdateAutor,
     deleteAutor,
     getAutorsAndPublications,
-    getAutorsAndPublicationsById
+    getAutorsAndPublicationsById,
+    getAutorsById
 }

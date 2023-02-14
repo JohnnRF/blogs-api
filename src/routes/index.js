@@ -1,11 +1,12 @@
 const {Router} = require('express');
-const { insertComent, updateComent, getAutors, getAutorsAndPublications, getAutorsAndPublicationsById, UpdateAutor, insertAutor, deleteAutor } = require('../../controllers/blog-controller');
+const { insertComent, updateComent, getAutors, getAutorsAndPublications, getAutorsAndPublicationsById, UpdateAutor, insertAutor, deleteAutor, getAutorsById } = require('../../controllers/blog-controller');
 const router = Router();
 
 //router.post('/blog',insertComent);
 //router.put('/blog',updateComent);
 router.post('/blog',insertAutor)
 router.get('/blog',getAutors);
+router.get('/blog/:id',getAutorsById);
 router.put('/blog', UpdateAutor);
 router.delete('/blog', deleteAutor);
 router.get('/blog/publicaciones',getAutorsAndPublications);
