@@ -36,14 +36,14 @@ const getAutorsById = async (req, res) => {
 }
 
 const UpdateAutor = async (req, resp) =>{
-    const {aut_usuario, aut_nombre, aut_id} = req.query;
+    const {aut_usuario, aut_nombre, aut_id} = req.body;
     const response = await db.query(`UPDATE public.autor SET aut_usuario=$1, aut_nombre=$2 WHERE aut_id = $3`, [aut_usuario, aut_nombre, aut_id]);
 
     resp.json(response);
 }
 
 const deleteAutor = async (req, resp) => {
-    const {aut_id} = req.query;
+    const aut_id= req.params.id;
     const response = await db.query(`DELETE FROM public.autor
 	WHERE aut_id=$1`, [aut_id]);
 

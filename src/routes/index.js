@@ -8,7 +8,7 @@ router.post('/blog',insertAutor)
 router.get('/blog',getAutors);
 router.get('/blog/:id',getAutorsById);
 router.put('/blog', UpdateAutor);
-router.delete('/blog', deleteAutor);
+router.delete('/blog/:id', deleteAutor);
 router.get('/blog/publicaciones',getAutorsAndPublications);
 router.get('/blog/publicaciones/id/:id',getAutorsAndPublicationsById);
 
